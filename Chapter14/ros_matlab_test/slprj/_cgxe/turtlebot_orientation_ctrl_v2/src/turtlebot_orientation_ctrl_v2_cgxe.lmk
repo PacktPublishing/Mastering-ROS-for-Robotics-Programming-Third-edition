@@ -1,0 +1,50 @@
+CC     = "C:\Program Files\MATLAB\R2017b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2017b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2017b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -nodeclspec -DMX_COMPAT_32 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2017b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"c_mexapi_version.obj"\
+	"lccstub.obj"\
+	"turtlebot_orientation_ctrl_v2_cgxe.obj"\
+	"m_xkq2bYMqTPePvRauP0qkrG.obj"\
+	"turtlebot_orientation_ctrl_v2_cgxe_registry.obj"\
+	"roundtolong.obj"\
+	"csleepfun_windows.obj"\
+	"ctimefun_windows.obj"\
+	"turtlebot_orientation_ctrl_v2_cgxe.def"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libmwcgxert.lib"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libmwslexec_simbridge.lib"\
+	"C:\Program Files\MATLAB\R2017b\lib\win64\libmwipp.lib"\
+	"C:\Program Files\MATLAB\R2017b\extern\lib\win64\microsoft\libcovrt.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2017b\extern\include"  -I"C:\Program Files\MATLAB\R2017b\simulink\include"  -I"C:\Program Files\MATLAB\R2017b\rtw\c\src"  -I"C:\Program Files\MATLAB\R2017b\sys\lcc64\lcc64\include64"  -I"C:\Users\jonat\Desktop\ros_matlab_test\slprj\_cgxe\turtlebot_orientation_ctrl_v2\src"  -I"C:\Program Files\MATLAB\R2017b\toolbox\robotics\robotcore\rate\include" 
+ 
+
+turtlebot_orientation_ctrl_v2_cgxe.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o turtlebot_orientation_ctrl_v2_cgxe.mexw64 @turtlebot_orientation_ctrl_v2_cgxe.lmko
+c_mexapi_version.obj :	"C:\Program Files\MATLAB\R2017b\extern\version\c_mexapi_version.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2017b\extern\version\c_mexapi_version.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2017b\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2017b\sys\lcc64\lcc64\mex\lccstub.c"
+turtlebot_orientation_ctrl_v2_cgxe.obj :	"turtlebot_orientation_ctrl_v2_cgxe.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "turtlebot_orientation_ctrl_v2_cgxe.c"
+m_xkq2bYMqTPePvRauP0qkrG.obj :	"m_xkq2bYMqTPePvRauP0qkrG.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_xkq2bYMqTPePvRauP0qkrG.c"
+turtlebot_orientation_ctrl_v2_cgxe_registry.obj :	"turtlebot_orientation_ctrl_v2_cgxe_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "turtlebot_orientation_ctrl_v2_cgxe_registry.c"
+roundtolong.obj :	"C:\Program Files\MATLAB\R2017b\toolbox\robotics\robotcore\rate\roundtolong.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2017b\toolbox\robotics\robotcore\rate\roundtolong.c"
+csleepfun_windows.obj :	"C:\Program Files\MATLAB\R2017b\toolbox\robotics\robotcore\rate\csleepfun_windows.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2017b\toolbox\robotics\robotcore\rate\csleepfun_windows.c"
+ctimefun_windows.obj :	"C:\Program Files\MATLAB\R2017b\toolbox\robotics\robotcore\rate\ctimefun_windows.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2017b\toolbox\robotics\robotcore\rate\ctimefun_windows.c"

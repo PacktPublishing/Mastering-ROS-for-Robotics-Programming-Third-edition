@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<launch> 
+  <!-- Launch Gazebo  --> 
+  <include file="$(find seven_dof_arm_gazebo)/launch/seven_dof_arm_world.launch" />    
+
+ 	
+ 	<node name="seven_dof_arm_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" 
+		ns="/seven_dof_arm" args="joint_state_controller"/>
+  
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/seven_dof_arm/joint_states" />
+  </node>
+ 
+  <include file="$(find seven_dof_arm_config)/launch/move_group.launch" />     
+ 
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"> 
+		<param name="/use_gui" value="false"/> 
+	  <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam> 
+	</node> 
+	
+  <include file="$(find seven_dof_arm_config)/launch/moveit_rviz.launch">
+	    <arg name="rviz_config" value="$(find seven_dof_arm_config)/launch/moveit.rviz"/>
+	</include>
+	
+	
+  <include file="$(find seven_dof_arm_config)/launch/ros_controllers.launch"/>
+	<!---->
+</launch> 
+

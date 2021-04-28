@@ -1,0 +1,18 @@
+seven_dof_arm: 
+  joint_state_controller:
+     type: joint_state_controller/JointStateController
+     publish_rate: 50
+  controller_list:
+    - name: arm_controller
+      action_ns: follow_joint_trajectory
+      default: True
+      type: FollowJointTrajectory
+      joints:
+        - shoulder_pan_joint
+        - shoulder_pitch_joint
+        - elbow_roll_joint
+        - elbow_pitch_joint
+        - wrist_roll_joint
+        - wrist_pitch_joint
+        - gripper_roll_joint
+  

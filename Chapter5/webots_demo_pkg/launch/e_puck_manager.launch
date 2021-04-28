@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- start Webots -->
+  <arg name="no-gui" default="false" />
+  <include file="$(find webots_ros)/launch/webots.launch">
+    <arg name="mode" value="realtime"/>
+    <arg name="no-gui" value="$(arg no-gui)"/>
+    <arg name="world" value="$(find webots_demo_pkg)/scene/mobile_robot/worlds/e_puck_ros.wbt"/>
+  </include>
+
+
+  <node name="e_puck_manager" pkg="webots_demo_pkg" type="e_puck_manager" output="screen" />
+	
+</launch>
