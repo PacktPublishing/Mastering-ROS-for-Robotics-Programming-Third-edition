@@ -1,18 +1,24 @@
 seven_dof_arm: 
-  joint_state_controller:
-     type: joint_state_controller/JointStateController
-     publish_rate: 50
-  controller_list:
-    - name: arm_controller
-      action_ns: follow_joint_trajectory
-      default: True
-      type: FollowJointTrajectory
-      joints:
-        - shoulder_pan_joint
-        - shoulder_pitch_joint
-        - elbow_roll_joint
-        - elbow_pitch_joint
-        - wrist_roll_joint
-        - wrist_pitch_joint
-        - gripper_roll_joint
-  
+  arm_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - shoulder_pan_joint
+      - shoulder_pitch_joint
+      - elbow_roll_joint
+      - elbow_pitch_joint
+      - wrist_roll_joint
+      - wrist_pitch_joint
+      - gripper_roll_joint
+    constraints:
+        goal_time: 0.6
+        stopped_velocity_tolerance: 0.05
+        shoulder_pan_joint: {trajectory: 0.1, goal: 0.1}
+        shoulder_pitch_joint: {trajectory: 0.1, goal: 0.1}
+        elbow_roll_joint: {trajectory: 0.1, goal: 0.1}
+        elbow_pitch_joint: {trajectory: 0.1, goal: 0.1}
+        wrist_roll_joint: {trajectory: 0.1, goal: 0.1}
+        wrist_pitch_joint: {trajectory: 0.1, goal: 0.1}
+        gripper_roll_joint: {trajectory: 0.1, goal: 0.1}      
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
