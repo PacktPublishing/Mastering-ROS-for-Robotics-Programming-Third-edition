@@ -1,11 +1,11 @@
 moveit_setup_assistant_config:
   URDF:
     package: mastering_ros_robot_description_pkg
-    relative_path: urdf/seven_dof_arm.xacro
+    relative_path: urdf/seven_dof_arm_with_rgbd.xacro
     xacro_args: ""
   SRDF:
     relative_path: config/seven_dof_arm.srdf
   CONFIG:
     author_name: Jonathan Cacace
     author_email: jonathan.cacace@gmail.com
-    generated_timestamp: 1622448870
+    generated_timestamp: 1622494202

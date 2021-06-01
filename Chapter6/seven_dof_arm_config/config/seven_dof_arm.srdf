@@ -10,39 +10,48 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="arm">
-        <chain base_link="base_link" tip_link="grasping_frame"/>
+        <chain base_link="base_link" tip_link="gripper_roll_link"/>
     </group>
     <group name="gripper">
         <joint name="finger_joint1"/>
         <joint name="finger_joint2"/>
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="robot_eef" parent_link="grasping_frame" group="arm"/>
+    <end_effector name="robot_eef" parent_link="gripper_roll_link" group="arm"/>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world" type="fixed" parent_frame="world" child_link="base_link"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="base_link" link2="bottom_link" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="elbow_roll_link" reason="Never"/>
+    <disable_collisions link1="base_link" link2="rgbd_camera_link" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="shoulder_pan_link" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="wrist_pitch_link" reason="Never"/>
     <disable_collisions link1="base_link" link2="wrist_roll_link" reason="Never"/>
     <disable_collisions link1="bottom_link" link2="elbow_roll_link" reason="Never"/>
+    <disable_collisions link1="bottom_link" link2="rgbd_camera_link" reason="Never"/>
     <disable_collisions link1="bottom_link" link2="shoulder_pan_link" reason="Never"/>
     <disable_collisions link1="bottom_link" link2="shoulder_pitch_link" reason="Never"/>
     <disable_collisions link1="elbow_pitch_link" link2="elbow_roll_link" reason="Adjacent"/>
     <disable_collisions link1="elbow_pitch_link" link2="gripper_roll_link" reason="Never"/>
+    <disable_collisions link1="elbow_pitch_link" link2="rgbd_camera_link" reason="Never"/>
     <disable_collisions link1="elbow_pitch_link" link2="shoulder_pan_link" reason="Never"/>
     <disable_collisions link1="elbow_pitch_link" link2="shoulder_pitch_link" reason="Never"/>
     <disable_collisions link1="elbow_pitch_link" link2="wrist_roll_link" reason="Adjacent"/>
     <disable_collisions link1="elbow_roll_link" link2="gripper_roll_link" reason="Never"/>
+    <disable_collisions link1="elbow_roll_link" link2="rgbd_camera_link" reason="Never"/>
     <disable_collisions link1="elbow_roll_link" link2="shoulder_pan_link" reason="Never"/>
     <disable_collisions link1="elbow_roll_link" link2="shoulder_pitch_link" reason="Adjacent"/>
     <disable_collisions link1="elbow_roll_link" link2="wrist_pitch_link" reason="Never"/>
     <disable_collisions link1="elbow_roll_link" link2="wrist_roll_link" reason="Never"/>
+    <disable_collisions link1="gripper_roll_link" link2="rgbd_camera_link" reason="Never"/>
     <disable_collisions link1="gripper_roll_link" link2="shoulder_pan_link" reason="Never"/>
     <disable_collisions link1="gripper_roll_link" link2="shoulder_pitch_link" reason="Never"/>
     <disable_collisions link1="gripper_roll_link" link2="wrist_pitch_link" reason="Adjacent"/>
     <disable_collisions link1="gripper_roll_link" link2="wrist_roll_link" reason="Never"/>
+    <disable_collisions link1="rgbd_camera_link" link2="shoulder_pan_link" reason="Never"/>
+    <disable_collisions link1="rgbd_camera_link" link2="shoulder_pitch_link" reason="Never"/>
+    <disable_collisions link1="rgbd_camera_link" link2="wrist_pitch_link" reason="Never"/>
+    <disable_collisions link1="rgbd_camera_link" link2="wrist_roll_link" reason="Never"/>
     <disable_collisions link1="shoulder_pan_link" link2="shoulder_pitch_link" reason="Adjacent"/>
     <disable_collisions link1="shoulder_pan_link" link2="wrist_pitch_link" reason="Never"/>
     <disable_collisions link1="shoulder_pan_link" link2="wrist_roll_link" reason="Never"/>

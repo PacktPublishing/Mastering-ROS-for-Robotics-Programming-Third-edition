@@ -2,7 +2,7 @@
 
 <launch> 
   <!-- Launch Gazebo  --> 
-  <include file="$(find seven_dof_arm_gazebo)/launch/seven_dof_arm_world.launch" />    
+  <include file="$(find seven_dof_arm_gazebo)/launch/seven_dof_arm_with_rgbd_world.launch" />    
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find seven_dof_arm_gazebo)/config/trajectory_control.yaml" command="load"/>
@@ -20,7 +20,6 @@
 	
 	<remap from="joint_states" to="/seven_dof_arm/joint_states" />
   
-  <!-- MoveIt! part -->
   <include file="$(find seven_dof_arm_config)/launch/planning_context.launch">
     <arg name="load_robot_description" value="false" />
   </include>
@@ -31,9 +30,8 @@
   </include>
 
   <include file="$(find seven_dof_arm_config)/launch/moveit_rviz.launch">
-
+    <arg name="rviz_config" value="$(find seven_dof_arm_config)/launch/moveit.rviz"/>
   </include>
-
 
 	
 	
