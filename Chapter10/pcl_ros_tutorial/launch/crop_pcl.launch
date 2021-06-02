@@ -1,0 +1,19 @@
+<launch>
+
+  <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" />
+
+  <node pkg="nodelet" type="nodelet" name="crop_box1" args="load pcl/CropBox pcl_manager" output="screen">
+        <remap from="~input" to="velodyne_points" />
+        <remap from="~output" to="crop_cloud" />
+        <rosparam>
+              min_x: 0.5
+              max_x: 100.0
+              min_y: -5.0
+              max_y: 10.0
+              min_z: -10
+              max_z: 30.0
+              keep_organized: true
+              negative: false
+        </rosparam>
+   </node>
+</launch>
