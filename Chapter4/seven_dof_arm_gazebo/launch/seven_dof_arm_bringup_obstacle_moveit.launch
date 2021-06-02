@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+
+<launch> 
+  <!-- Launch Gazebo  --> 
+  <include file="$(find seven_dof_arm_gazebo)/launch/seven_dof_arm_obstacle_world.launch" />    
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find seven_dof_arm_gazebo)/config/trajectory_control.yaml" command="load"/>
+  <rosparam file="$(find seven_dof_arm_gazebo)/config/seven_dof_arm_gazebo_joint_states.yaml" command="load"/>
+
+
+ 	<node name="seven_dof_arm_joint_state_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/seven_dof_arm" args="joint_state_controller arm_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/seven_dof_arm/joint_states" />
+  </node>
+  
+ 
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
+	
+	<remap from="joint_states" to="/seven_dof_arm/joint_states" />
+  
+  <include file="$(find seven_dof_arm_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="false" />
+  </include>
+
+  <include file="$(find seven_dof_arm_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+
+  </include>
+
+  <include file="$(find seven_dof_arm_config)/launch/moveit_rviz.launch">
+    <arg name="rviz_config" value="$(find seven_dof_arm_config)/launch/moveit.rviz"/>
+  </include>
+
+	
+	
+</launch> 
+

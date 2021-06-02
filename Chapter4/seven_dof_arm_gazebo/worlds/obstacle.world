@@ -1,0 +1,54 @@
+<?xml version='1.0' ?>
+<sdf version='1.4'>
+  <world name='grasping'>
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+ 
+
+    <model name='table'>
+      <link name='link'>
+        <visual name='visual1'>
+          <pose>0 0 0.0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 1 0.2</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>0.6 0 0.15 0 -0 0</pose>
+      <static>1</static>
+    </model>
+
+    <model name='ground'>
+      <link name='link'>
+        <visual name='visual1'>
+          <pose>0 0 0.0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.5 1.5 0.02</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+      <pose>0.0 0 0.01 0 -0 0</pose>
+      <static>1</static>
+    </model>
+
+
+    <!-- Physics settings for simulation -->
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.81</gravity>
+    </physics>
+  </world>
+</sdf>
