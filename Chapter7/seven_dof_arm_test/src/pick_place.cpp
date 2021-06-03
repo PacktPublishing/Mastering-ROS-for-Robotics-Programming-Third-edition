@@ -65,7 +65,7 @@ int main(int argc, char **argv) {
 	grasping_object.id = "grasping_object";
 	pose.orientation.w = 1.0;
 	pose.position.y =  0.0;
-	pose.position.x =  0.33;
+	pose.position.x =  0.41;
 	pose.position.z =  0.35;
 
 	grasping_object.primitives.push_back(primitive);
@@ -100,9 +100,7 @@ int main(int argc, char **argv) {
 	const robot_state::JointModelGroup *joint_model_group =
   group.getCurrentState()->getJointModelGroup("arm");
 
-
-
-
+	
 	//---approaching
 	geometry_msgs::Pose target_pose;
 	target_pose.orientation.x = 0;
@@ -110,12 +108,14 @@ int main(int argc, char **argv) {
 	target_pose.orientation.z = 0;
 	target_pose.orientation.w = 1;
 	target_pose.position.y = 0.0;
-	target_pose.position.x = 0.32;
+	target_pose.position.x = 0.28;
 	target_pose.position.z = 0.35;
 	group.setPoseTarget(target_pose);
 	group.move();
 	sleep(2);
 
+	cout << "First motion done!" << endl;
+	
 	//---grasping
 	target_pose.position.y = 0.0;
 	target_pose.position.x = 0.34;
@@ -123,13 +123,23 @@ int main(int argc, char **argv) {
 	group.setPoseTarget(target_pose);
 	group.move();
 
+
+	cout << "attacching!" << endl;
+	
 	//---attach object to the robot
-	moveit_msgs::AttachedCollisionObject attacched_object;
-	attacched_object.link_name = "grasping_frame";
-	attacched_object.object = grasping_object;
-	current_scene.applyAttachedCollisionObject( attacched_object );
+	//grasping_object
+	moveit_msgs::AttachedCollisionObject att_coll_object;
+	att_coll_object.object.id = "grasping_object";
+	att_coll_object.link_name = "gripper_finger_link1";
+	att_coll_object.object.operation = att_coll_object.object.ADD;
+	planning_scene_interface.applyAttachedCollisionObject(att_coll_object);
+	//attacched_object.link_name = "grasping_frame";
+	//attacched_object.object = grasping_object;
+	//current_scene.applyAttachedCollisionObject( attacched_object );
+
 	sleep(2);
 
+	cout << "second motion!" << endl;
 	//---move far away from the grasping position
 	target_pose.position.y = 0.0;
 	target_pose.position.x = 0.34;
@@ -137,6 +147,9 @@ int main(int argc, char **argv) {
 	group.setPoseTarget(target_pose);
 	group.move();
 	sleep(2);
+
+
+	cout << "Picking motion!" << endl;
 
 	//---picking
 	target_pose.orientation.x = -1;
@@ -150,17 +163,21 @@ int main(int argc, char **argv) {
 	group.move();
 	//---
 	
+	
+	cout << "Picked!" << endl;
+	
 	target_pose.position.y = -0.1;
 	target_pose.position.x = 0.34;
 	target_pose.position.z = 0.35;
 	group.setPoseTarget(target_pose);
 	group.move();
-
 	//---remove object from robot's body
-	grasping_object.operation = grasping_object.REMOVE;
-	attacched_object.link_name = "grasping_frame";
-	attacched_object.object = grasping_object;
-	current_scene.applyAttachedCollisionObject( attacched_object );
+
+	att_coll_object.object.operation = att_coll_object.object.REMOVE;
+	att_coll_object.link_name = "gripper_finger_link1";
+	att_coll_object.object.id = "grasping_object";
+	planning_scene_interface.applyAttachedCollisionObject(att_coll_object);
+
 	target_pose.position.y = -0.1;
 	target_pose.position.x = 0.32;
 	target_pose.position.z = 0.35;

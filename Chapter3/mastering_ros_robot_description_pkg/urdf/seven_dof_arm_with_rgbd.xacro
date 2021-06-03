@@ -498,10 +498,10 @@ This link is the base of the arm in which arm is placed
     <material>Gazebo/White</material>
   </gazebo>
 
-  <!-- Define RGB-D sensor -->
+  <!-- Define RGB-D sensor -->  
   <xacro:xtion_pro_live name="rgbd_camera" parent="base">
-    <origin xyz="0.15 0.0 0.8" rpy="0 ${75.0 * deg_to_rad} 0"/>
-    <optical_origin xyz="0 0 0" rpy="${-90.0 * deg_to_rad} 0 ${-90.0 * deg_to_rad}"/>
+    <origin xyz="0.1 0.0 0.9" rpy="${0.0 * deg_to_rad} ${70.0 * deg_to_rad} ${0.0 * deg_to_rad}"/>
+    <origin xyz="0 0 0" rpy="${-90 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" />
   </xacro:xtion_pro_live>
 
 
