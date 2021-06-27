@@ -8,12 +8,12 @@ int main(int argc, char** argv)
 {
 
 
-  pluginlib::ClassLoader<calculator_base::calc_functions> calc_loader("pluginlib_calculator", "calculator_base::calc_functions");
+  pluginlib::ClassLoader<calculator_base::CalcFunctions> calc_loader("pluginlib_calculator", "calculator_base::CalcFunctions");
 
   try
   {
-    boost::shared_ptr<calculator_base::calc_functions> add = calc_loader.createInstance("pluginlib_calculator/Add");
-    add->get_numbers(10.0,10.0);
+    boost::shared_ptr<calculator_base::CalcFunctions> add = calc_loader.createInstance("pluginlib_calculator/Add");
+    add->getNumbers(10.0,10.0);
     double result = add->operation();
 
     ROS_INFO("Sum result: %.2f", result);
@@ -26,9 +26,9 @@ int main(int argc, char** argv)
 
   try
   {
-    boost::shared_ptr<calculator_base::calc_functions> sub = calc_loader.createInstance("pluginlib_calculator/Sub");
+    boost::shared_ptr<calculator_base::CalcFunctions> sub = calc_loader.createInstance("pluginlib_calculator/Sub");
 
-    sub->get_numbers(10.0,10.0);
+    sub->getNumbers(10.0,10.0);
     double result = sub->operation();
 
     ROS_INFO("Substracted result: %.2f", result);
@@ -43,8 +43,8 @@ int main(int argc, char** argv)
 
   try
   {
-    boost::shared_ptr<calculator_base::calc_functions> mul = calc_loader.createInstance("pluginlib_calculator/Mul");
-    mul->get_numbers(10.0,10.0);
+    boost::shared_ptr<calculator_base::CalcFunctions> mul = calc_loader.createInstance("pluginlib_calculator/Mul");
+    mul->getNumbers(10.0,10.0);
     double result = mul->operation();
 
     ROS_INFO("Multiplied result: %.2f", result);
@@ -59,8 +59,8 @@ int main(int argc, char** argv)
 
   try
   {
-    boost::shared_ptr<calculator_base::calc_functions> div = calc_loader.createInstance("pluginlib_calculator/Div");
-    div->get_numbers(10.0,10.0);
+    boost::shared_ptr<calculator_base::CalcFunctions> div = calc_loader.createInstance("pluginlib_calculator/Div");
+    div->getNumbers(10.0,10.0);
     double result = div->operation();
 
     ROS_INFO("Division result: %.2f", result);

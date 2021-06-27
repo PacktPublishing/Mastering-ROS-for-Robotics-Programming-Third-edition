@@ -3,15 +3,15 @@
 
 namespace calculator_base 
 {
-  class calc_functions
+  class CalcFunctions
   {
     public:
-      virtual void get_numbers(double number1, double number2) = 0;
+      virtual void getNumbers(double number1, double number2) = 0;
       virtual double operation() = 0;
-      virtual ~calc_functions(){}
+      virtual ~CalcFunctions(){}
 
     protected:
-      calc_functions(){}
+      CalcFunctions(){}
   };
 };
 #endif

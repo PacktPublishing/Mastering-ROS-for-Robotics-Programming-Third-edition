@@ -8,7 +8,7 @@ namespace calculator_plugins
 {
 
 
-  class Add : public calculator_base::calc_functions
+  class Add : public calculator_base::CalcFunctions
   {
     public:
 	Add()
@@ -18,7 +18,7 @@ namespace calculator_plugins
 
 	}
 
-	void get_numbers(double number1, double number2)
+	void getNumbers(double number1, double number2)
 	{
 		try{
 
@@ -46,7 +46,7 @@ namespace calculator_plugins
   };
 
 
-  class Sub : public calculator_base::calc_functions
+  class Sub : public calculator_base::CalcFunctions
   {
     public:
 	Sub()
@@ -56,7 +56,7 @@ namespace calculator_plugins
 
 	}
 
-	void get_numbers(double number1, double number2)
+	void getNumbers(double number1, double number2)
 	{
 		try{
 
@@ -84,7 +84,7 @@ namespace calculator_plugins
   };
 
 
-  class Mul : public calculator_base::calc_functions
+  class Mul : public calculator_base::CalcFunctions
   {
     public:
 	Mul()
@@ -94,7 +94,7 @@ namespace calculator_plugins
 
 	}
 
-	void get_numbers(double number1, double number2)
+	void getNumbers(double number1, double number2)
 	{
 		try{
 
@@ -123,7 +123,7 @@ namespace calculator_plugins
 
 
 
-  class Div : public calculator_base::calc_functions
+  class Div : public calculator_base::CalcFunctions
   {
     public:
 	Div()
@@ -133,7 +133,7 @@ namespace calculator_plugins
 
 	}
 
-	void get_numbers(double number1, double number2)
+	void getNumbers(double number1, double number2)
 	{
 		try{
 
