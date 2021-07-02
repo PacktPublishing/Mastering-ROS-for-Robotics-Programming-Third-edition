@@ -11,6 +11,7 @@ static const std::string OPENCV_WINDOW_1 = "Edge Detection";
 class Edge_Detector
 {
   ros::NodeHandle nh_;
+  
   image_transport::ImageTransport it_;
   image_transport::Subscriber image_sub_;
   image_transport::Publisher image_pub_;
@@ -48,6 +49,8 @@ public:
       return;
     }
 
+     //cv::Mat test = cv_ptr->image;
+   
     // Draw an example circle on the video stream
     if (cv_ptr->image.rows > 400 && cv_ptr->image.cols > 600){
 

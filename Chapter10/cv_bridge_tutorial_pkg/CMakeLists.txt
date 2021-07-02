@@ -23,17 +23,3 @@ add_executable(sample_cv_bridge_node src/sample_cv_bridge_node.cpp)
    ${OpenCV_LIBRARIES}
  )
 
-add_executable(Sender src/Sender.cpp)
- target_link_libraries(Sender
-   ${catkin_LIBRARIES}
-   ${OpenCV_LIBRARIES}
- )
- 
-add_executable(Receiver src/Receiver.cpp)
- target_link_libraries(Receiver
-   ${catkin_LIBRARIES}
-   ${OpenCV_LIBRARIES}
- ) 
- 
-
-include_directories(${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})

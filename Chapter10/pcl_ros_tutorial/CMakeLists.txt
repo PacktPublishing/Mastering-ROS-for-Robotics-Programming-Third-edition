@@ -19,8 +19,6 @@ add_executable(pcl_filter src/pcl_filter.cpp)
 add_executable(pcl_write src/pcl_write.cpp)
 add_executable(pcl_read src/pcl_read.cpp)
 
-add_executable(pcl_pub src/pcl_pub.cpp)
-add_executable(pcl_sub src/pcl_sub.cpp)
 
 target_link_libraries(pcl_publisher_node
    ${catkin_LIBRARIES}
@@ -35,9 +33,4 @@ target_link_libraries(pcl_write
 target_link_libraries(pcl_read
    ${catkin_LIBRARIES}
  )
-target_link_libraries(pcl_pub
-   ${catkin_LIBRARIES}
- )
-target_link_libraries(pcl_sub
-   ${catkin_LIBRARIES}
- )  
+

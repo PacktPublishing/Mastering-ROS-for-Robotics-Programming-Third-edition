@@ -1,9 +1,6 @@
 <launch>
 
-  <node pkg="cv_bridge_tutorial_pkg" type="sample_cv_bridge_node" name="node1">
-  </node>
-
-  <node pkg="cv_bridge_tutorial_pkg" type="sample_cv_bridge_node" name="node2">
+  <node pkg="cv_bridge_tutorial_pkg" type="sample_cv_bridge_node" name="cv_bridge_node">
   </node>
 
 
