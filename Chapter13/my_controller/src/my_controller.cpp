@@ -58,10 +58,9 @@ namespace my_controller_ns {
   void MyControllerClass::update(const ros::Time& time, const ros::Duration& period)
   {
 		//---Perform a sinusoidal motion for joint shoulder_pan_joint
-		double dpos = init_pos_ + 10 * cos(ros::Time::now().toSec());
+		double dpos = init_pos_ + 10 * sin(ros::Time::now().toSec());
 		double cpos = joint_.getPosition();
-		//joint_.setCommand( -10*(cpos-dpos)); //Apply command to the selected joint
-		joint_.setCommand(-10); //Apply command to the selected joint
+		joint_.setCommand( -10*(cpos-dpos)); //Apply command to the selected joint
 
 		//---
   }
