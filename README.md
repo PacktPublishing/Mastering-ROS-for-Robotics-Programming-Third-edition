@@ -10,11 +10,11 @@ This is the code repository for [Mastering ROS for Robotics Programming](https:/
 The area of robotics is gaining huge momentum among corporate people, researchers, hobbyists, and students. The major challenge in robotics is its controlling software. The Robot Operating System (ROS) is a modular software platform to develop generic robotic applications.
 
 This book covers the following exciting features:
-Create a robot model with a 7-DOF robotic arm and a differential wheeled mobile robot
-Work with Gazebo, CoppeliaSim, and Webots robotic simulators
-Implement autonomous navigation in differential drive robots using SLAM and AMCL packages
-Interact with and simulate aerial robots using ROS
-Explore ROS pluginlib, ROS nodelets, and Gazebo plugins
+* Create a robot model with a 7-DOF robotic arm and a differential wheeled mobile robot
+* Work with Gazebo, CoppeliaSim, and Webots robotic simulators
+* Implement autonomous navigation in differential drive robots using SLAM and AMCL packages
+* Interact with and simulate aerial robots using ROS
+* Explore ROS pluginlib, ROS nodelets, and Gazebo plugins
 Interface I/O boards such as Arduino, robot sensors, and high-end actuators
 Simulate and perform motion planning for an ABB robot and a universal arm using ROS-Industrial
 Work with the motion planning features of a 7-DOF arm using MoveIt
@@ -38,6 +38,8 @@ void number_callback(const std_msgs::Int32::ConstPtr& msg) {
 If you are a robotics graduate, robotics researcher, or robotics software professional looking to work with ROS, this book is for you. Programmers who want to explore the advanced features of ROS will also find this book useful. Basic knowledge of ROS, GNU/Linux, and C++ programming concepts is necessary to get started with this book.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-16).
+
+
 ### Software and Hardware List
 | Chapter | Software required | OS required |
 | -------- | ------------------------------------ | ----------------------------------- |
@@ -46,6 +48,13 @@ With the following software and hardware list you can run all code files present
 
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it]( http://www.packtpub.com/sites/default/files/downloads/9781801071024_ColorImages.pdf).
+
+
+### Code in Action
+Click on following link to see the Code in Action:
+
+[Youtube link](https://bit.ly/3iYZnGH)
+
 
 ### Related products
 * Learn Robotics Programming - Second Edition [[Packt]](https://www.packtpub.com/product/learn-robotics-programming-second-edition/9781839218804?utm_source=github&utm_medium=repository&utm_campaign=9781839218804) [[Amazon]](https://www.amazon.com/dp/1839218800)
