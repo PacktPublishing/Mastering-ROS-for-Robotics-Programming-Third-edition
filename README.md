@@ -15,9 +15,9 @@ This book covers the following exciting features:
 * Implement autonomous navigation in differential drive robots using SLAM and AMCL packages
 * Interact with and simulate aerial robots using ROS
 * Explore ROS pluginlib, ROS nodelets, and Gazebo plugins
-Interface I/O boards such as Arduino, robot sensors, and high-end actuators
-Simulate and perform motion planning for an ABB robot and a universal arm using ROS-Industrial
-Work with the motion planning features of a 7-DOF arm using MoveIt
+* Interface I/O boards such as Arduino, robot sensors, and high-end actuators
+* Simulate and perform motion planning for an ABB robot and a universal arm using ROS-Industrial
+* Work with the motion planning features of a 7-DOF arm using MoveIt
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1783551798) today!
 
