@@ -1,3 +1,7 @@
+## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B17104?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
+-----
+For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
+
 # Mastering ROS for Robotics Programming
 
 <a href="https://www.packtpub.com/product/mastering-ros-for-robotics-programming/9781783551798?utm_source=github&utm_medium=repository&utm_campaign=9781783551798"><img src="https://static.packt-cdn.com/products/9781783551798/cover/smaller" alt="Mastering ROS for Robotics Programming" height="256px" align="right"></a>
