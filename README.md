@@ -1,3 +1,15 @@
+
+### Get this product for $5
+
+<i>Packt is having its biggest sale of the year. Get this eBook or any other book, video, or course that you like just for $5 each</i>
+
+
+<b><p align='center'>[Buy now](https://packt.link/9781801071024)</p></b>
+
+
+<b><p align='center'>[Buy similar titles for just $5](https://subscription.packtpub.com/search)</p></b>
+
+
 # Mastering ROS for Robotics Programming
 
 <a href="https://www.packtpub.com/product/mastering-ros-for-robotics-programming/9781783551798?utm_source=github&utm_medium=repository&utm_campaign=9781783551798"><img src="https://static.packt-cdn.com/products/9781783551798/cover/smaller" alt="Mastering ROS for Robotics Programming" height="256px" align="right"></a>
