@@ -67,6 +67,8 @@ Click on following link to see the Code in Action:
 
 [Youtube link](https://bit.ly/3iYZnGH)
 
+## Errata
+ * Page xix (Preface, line 25): **development environment in Eclipse IDE** _should be_ **development environment in Visual Studio Code**
 
 ### Related products
 * Learn Robotics Programming - Second Edition [[Packt]](https://www.packtpub.com/product/learn-robotics-programming-second-edition/9781839218804?utm_source=github&utm_medium=repository&utm_campaign=9781839218804) [[Amazon]](https://www.amazon.com/dp/1839218800)
